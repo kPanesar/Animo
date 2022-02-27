@@ -1,0 +1,10 @@
+{
+  "name": "animo",
+  "version-string": "0.0.1",
+  "description": "Qualitative data analysis platform",
+  "dependencies": [
+    "glfw3",
+    "imgui",
+    "vulkan"
+  ]
+}
