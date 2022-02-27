@@ -4,7 +4,9 @@
   "description": "Qualitative data analysis platform",
   "dependencies": [
     "glfw3",
-    "imgui",
-    "vulkan"
+    {
+      "name": "imgui",
+      "features": ["docking-experimental", "glfw-binding", "vulkan-binding"]
+    }
   ]
 }

@@ -356,9 +356,8 @@ static void glfw_error_callback(int error, const char* description)
     fprintf(stderr, "Glfw Error %d: %s\n", error, description);
 }
 
-//int main(int, char**)
-int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow)
-//int main(int, char**)
+// int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow)
+int main(int, char**)
 {
     // Setup GLFW window
     glfwSetErrorCallback(glfw_error_callback);
@@ -438,7 +437,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nC
     style.ScaleAllSizes(scale_factor);
 
     // Load Fonts
-    io.Fonts->AddFontFromFileTTF("./resources/fonts/Arimo/static/Arimo-regular.ttf", int(14.0f*scale_factor));
+    io.Fonts->AddFontFromFileTTF("../resources/fonts/Arimo/static/Arimo-regular.ttf", int(14.0f*scale_factor));
 
 
     // Upload Fonts

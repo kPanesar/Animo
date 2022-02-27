@@ -1,0 +1,15 @@
+.vscode/
+.idea/
+.vs/
+
+cmake-build-*/
+
+build-linux/
+build*/
+x64/
+
+imgui.ini
+.DS_Store
+*.nupkg
+
+**/target
