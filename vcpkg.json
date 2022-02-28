@@ -7,6 +7,8 @@
     {
       "name": "imgui",
       "features": ["docking-experimental", "glfw-binding", "vulkan-binding"]
-    }
+    },
+    "fmt",
+    "nlohmann-json"
   ]
 }

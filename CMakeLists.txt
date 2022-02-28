@@ -11,8 +11,29 @@ find_package(imgui CONFIG REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
 find_package(Vulkan REQUIRED)
 
+# Detect current OS / System
+if (WIN32)
+    add_compile_definitions(OS_WINDOWS)
+    set(CMAKE_INSTALL_BINDIR ".")
+    set(CMAKE_INSTALL_LIBDIR ".")
+    set(PLUGINS_INSTALL_LOCATION "plugins")
+elseif (APPLE)
+    add_compile_definitions(OS_MACOS)
+    set(CMAKE_INSTALL_BINDIR ".")
+    set(CMAKE_INSTALL_LIBDIR ".")
+    set(PLUGINS_INSTALL_LOCATION "plugins")
+elseif (UNIX AND NOT APPLE)
+    add_compile_definitions(OS_LINUX)
+    set(CMAKE_INSTALL_BINDIR "bin")
+    set(CMAKE_INSTALL_LIBDIR "lib")
+    set(PLUGINS_INSTALL_LOCATION "share/animo/plugins")
+else ()
+    message(FATAL_ERROR "Unknown / unsupported system!")
+endif()
+
+
 # Add Animo sources
-# add_subdirectory(lib)
+add_subdirectory(lib)
 
 set(SOURCES 
     src/main.cpp
