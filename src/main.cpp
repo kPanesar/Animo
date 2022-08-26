@@ -19,7 +19,10 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.h>
+
+#ifdef OS_WINDOWS
 #include <Windows.h>
+#endif
 
 #include "Animo.h"
 
@@ -356,8 +359,12 @@ static void glfw_error_callback(int error, const char* description)
     fprintf(stderr, "Glfw Error %d: %s\n", error, description);
 }
 
-// int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow)
+#ifdef OS_WINDOWS
+int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow)
+#endif
+#ifndef OS_WINDOWS
 int main(int, char**)
+#endif
 {
     // Setup GLFW window
     glfwSetErrorCallback(glfw_error_callback);
@@ -365,8 +372,11 @@ int main(int, char**)
         return 1;
 
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+    auto mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+    int width = mode->width;
+    int height = mode->height;
 	//glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
-    GLFWwindow* window = glfwCreateWindow(1920, 1080, "Animo Qualitative Research", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(width/2, height/2, "Animo Qualitative Research", NULL, NULL);
 
     // Setup Vulkan
     if (!glfwVulkanSupported())
@@ -437,7 +447,7 @@ int main(int, char**)
     style.ScaleAllSizes(scale_factor);
 
     // Load Fonts
-    io.Fonts->AddFontFromFileTTF("../resources/fonts/Arimo/static/Arimo-regular.ttf", int(14.0f*scale_factor));
+    io.Fonts->AddFontFromFileTTF("../../../resources/fonts/Arimo/static/Arimo-regular.ttf", int(14.0f*scale_factor));
 
 
     // Upload Fonts

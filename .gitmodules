@@ -1,0 +1,6 @@
+[submodule "lib/external/vcpkg"]
+	path = lib/external/vcpkg
+	url = https://github.com/Microsoft/vcpkg.git
+[submodule "lib/external/nativefiledialog"]
+	path = lib/external/nativefiledialog
+	url = https://github.com/btzy/nativefiledialog-extended

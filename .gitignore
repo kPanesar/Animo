@@ -2,8 +2,8 @@
 .idea/
 .vs/
 
+vcpkg_installed/
 cmake-build-*/
-
 build-linux/
 build*/
 x64/
