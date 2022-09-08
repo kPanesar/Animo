@@ -11,9 +11,15 @@ find_package(nlohmann_json CONFIG REQUIRED)
 set(JSON_MultipleHeaders ON)
 
 set(LIBANIMO_SOURCES
-    src/animo.hpp
+    src/ampch.cpp
+    src/ampch.h
+    src/animo.h
     src/api/animo_api.cpp
-    src/api/animo_api.hpp
+    src/api/animo_api.h
+    src/core/timer.h
+    src/core/timestep.h
+    src/core/uuid.cpp
+    src/core/uuid.h
 )
 
 add_subdirectory(external/nativefiledialog)

@@ -16,7 +16,8 @@
           "value": "x64-windows",
           "type": "STRING"
         }
-      ]
+      ],
+      "enableClangTidyCodeAnalysis": true
     },
     {
       "name": "x64-Release",

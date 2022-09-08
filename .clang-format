@@ -1,6 +1,6 @@
 ---
 BasedOnStyle: LLVM
-# IndentWidth: 4
+IndentWidth: 4
 BinPackArguments: false
 ColumnLimit: 160
 AllowShortIfStatementsOnASingleLine: WithoutElse

@@ -1,16 +1,10 @@
-#include <api/animo_api.hpp>
+#include "api/animo_api.h"
 #include <iostream>
 
 namespace Animo {
 
-    namespace Common {
-        void closeAnimo(bool noQuestions)
-        {
-            std::cout << "Closing Animo...";
-        }
-        void restartAnimo()
-        {
-            std::cout << "Restarting Animo...";
-        }
-    }
-}
+namespace Common {
+void CloseAnimo(bool no_questions) { std::cout << "Closing Animo..."; }
+void RestartAnimo() { std::cout << "Restarting Animo..."; }
+} // namespace Common
+} // namespace Animo
